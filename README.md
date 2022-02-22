@@ -11,6 +11,7 @@ Use the Youtube search API to get all the videos with query "Apple" and store it
     - [Setting-up a virtual environment](#virtual-environment)
     - [Installing Dependancies](#installing-dependancies)
     - [Setting-up Environment variables](#environment-variables)
+    - [Migrating changes](#migrate-changes-in-database)
     - [Running the server](#run-the-server)
 - [License](#license)
 
@@ -49,11 +50,15 @@ user@hostname:~$ source venv/bin/activate
 ```
 Refer to the [official virtualenv documentation](https://virtualenv.pypa.io/en/latest/) for any further help
 
+> NOTE: Make sure you are in the `IEEE-recruitment/` folder while running this command
+
 ### Installing dependancies
 To install all the dependancies for this project run the following command in your terminal - 
 ```sh
 pip install -r requirements.txt
 ```
+
+
 ### Environment Variables 
 You will need create a `.env` as shown in `.env.example` inside the `YoutubeSearch/` folder with 
 - `Django Secret key` - can be anything you want. Create a unique one.
@@ -64,20 +69,43 @@ You will need create a `.env` as shown in `.env.example` inside the `YoutubeSear
 SECRET_KEY=<Your Django key>
 YOUTUBE_API_KEY=<Your youtube API key>
 ```
+
+### Migrate Changes in database
+Before you can get the server up and running you will have to migrate the changes made in the database. Run the following command -   
+Windows
+```psh
+C:\Users\Username\dir> python manage.py migrate
+```
+Linux
+```sh
+user@hostname:~$ python3 manage.py migrate
+```
+> NOTE: Make sure you are in the `IEEE-recruitment/` folder while running this command
+
 ### Run the server!
 We're all set the run the server now! Type the following command in your terminal -  
 ```
 ./manage.py runserver
 ```
+or  
+Windows
+```psh
+C:\Users\Username\dir> python manage.py runserver
+```
+Linux  
+```sh
+user@hostname:~$ python3 manage.py runserver
+```
 And then type `localhost:8000` or `127.0.0.1:8000` in your browser's search bar and voila!
+
+> NOTE: Make sure you are in the `IEEE-recruitment/` folder while running this command
 
 ## License 
 Copyright © 2022 Dhruv9449  
 [MIT License](LICENSE)
 
-
-
-
-
-
-
+<br>
+<br>
+<p align="center">
+Developed by <a href="https://github.com/Dhruv9449" target=_blank>Dhruv Shah</a>
+</p>
