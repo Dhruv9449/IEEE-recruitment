@@ -3,11 +3,17 @@
 Use the Youtube search API to get all the videos with query "Apple" and store it in a database. Make an endpoint to query the DB based on the video name. [Bonus: Implement fuzzy search]
 
 
+## Implementation Checks
+- Use the Youtube search API to get all the videos with query "Apple" ✔
+- Store it in a database ✔
+- Make an endpoint to query the DB based on the video name ✔
+- Bonus: Implement fuzzy search ✔ 
 
 ## Table of contents
 - [Preview](#preview)
     - [Search](#search)
     - [I'm Feeling Lucky](#im-feeling-lucky)
+- [Requirements](#requirements)
 - [Setting-up and Installation](#setting-up-and-installation)
     - [Cloning Repositary](#cloning-repositary)
     - [Setting-up a virtual environment](#virtual-environment)
@@ -31,7 +37,20 @@ Redirects to the first search result
 
 ![YoutubeAPI-im_feeling_lucky](assets/im_feeling_lucky.gif)
 
+### Fuzzy Search
+Getting results similar to search if exact match is not found.
 
+![YoutubeAPI-fuzzy_search](assets/fuzzy_search.gif)
+
+
+
+## Requirements
+- [Python version 3+](https://www.python.org/downloads/)
+- [PostgreSQL](https://www.postgresql.org/download/)
+
+> NOTE: If you do not wish to use PostgreSQL you can use [`version 1.0`](https://github.com/Dhruv9449/IEEE-recruitment/releases/tag/1.0v) without the **fuzzy search** functionality.  
+   
+> NOTE: If you wish to run an online free instace of postgreSQL you can use [ElephantSQL](https://www.elephantsql.com/).
 
 
 ## Setting up and Installation
@@ -77,11 +96,19 @@ pip install -r requirements.txt
 You will need create a `.env` as shown in `.env.example` inside the `YoutubeSearch/` folder with 
 - `Django Secret key` - can be anything you want. Create a unique one.
 - `Youtube API key` - Your Youtube API key which will be required for getting youtube's data. You can get one from [Google's official website](https://console.developers.google.com/home/). For more info on the API you can refer [Google APIs github](https://github.com/googleapis/google-api-python-client). 
-
-`.env`
+- `DB name` - Name of your database.
+- `DB user` - PostgreSQL Username .
+- `DB password` - Database password.
+- `DB host` - Database host.
+  
+`.env` format
 ```
 SECRET_KEY=<Your Django key>
 YOUTUBE_API_KEY=<Your youtube API key>
+DB_NAME=<postgres database name>
+DB_USER=<postgres username>
+DB_PASSWORD=<postgres database password>
+DB_HOST=<postgres database hostname>
 ```
 
 

@@ -1,6 +1,7 @@
 from html import unescape
 from datetime import datetime
 from django.shortcuts import render
+from django.contrib.postgres.search import SearchQuery, SearchVector, SearchRank
 from YouTubeSearch.settings import YOUTUBE_API_KEY
 from googleapiclient.discovery import build
 from youtube_search_api.models import QueryResult
@@ -44,7 +45,12 @@ def index(request):
 def search(request):
     query = request.GET['query']
     search_type = request.GET['search_type']
-    results = QueryResult.objects.filter(title__icontains=query)
+
+    vector = SearchVector('title')
+    q = SearchQuery(query)
+    results = QueryResult.objects.annotate(rank=SearchRank(
+        vector, q)).filter(rank__gte=0.0001).order_by('-rank')
+
     im_feeling_lucky = False
     if search_type == 'im_feeling_lucky':
         im_feeling_lucky = True
