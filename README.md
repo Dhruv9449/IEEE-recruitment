@@ -75,6 +75,12 @@ And then type `localhost:8000` or `127.0.0.1:8000` in your browser's search bar 
 Copyright © 2022 Dhruv9449  
 [MIT License](LICENSE)
 
+<br>
+<br>
+<p align="center">
+Developed by <a href="https://github.com/Dhruv9449" target=_blank>Dhruv Shah</a>
+</p>
+
 
 
 
