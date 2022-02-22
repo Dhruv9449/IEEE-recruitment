@@ -1,0 +1,26 @@
+{% extends 'youtube_search_api/base.html' %}
+
+{% block title %} Youtube Search - Home {% endblock title %}
+
+{% load static %}
+
+{% block body %}
+<div class="container h-100">
+    <div class="row align-items-center justify-content-center vh-100">
+        <div class="col-6 mx-auto" style="text-align:center;">
+            <div class="row justify-content-center">
+                <img src="{% static '/youtube_search_api/youtube_icon.png' %}" class="mr-6" width="100rem">
+            </div>
+            <h1 style="font-size: 4rem;"> You<span style="color:red;">Tube</span> search</h1>
+            <form action="/search" method="get" class="form my-2 justify-self-center">
+                <input class="form-control my-4" type="text" placeholder="Search" name="query">
+                <button class="btn btn-outline-danger my-4 my-sm-0 mr-2" type="submit" name="search_type"
+                    value="search"> Youtube Search</button>
+                <button class="btn btn-outline my-4 my-sm-0" type="submit" name="search_type" value="im_feeling_lucky">
+                    I'm feeling lucky </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

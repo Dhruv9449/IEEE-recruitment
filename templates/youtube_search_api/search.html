@@ -1,0 +1,68 @@
+{% extends 'youtube_search_api/base.html' %}
+
+{% block title %} Search -{{query}} {% endblock title %}
+{% load static %}
+
+{% block body %}
+{% if im_feeling_lucky and videos.count > 0%}
+<script>window.location = '{{videos.0.video_url}}'</script>
+{% endif %}
+<a class="btn btn-outline-danger pull-right" href="/">
+    <- </a>
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <form action="/search" class="form-inline">
+                    <input class="form-control my-4 mx-4" type="search" placeholder="Search" name="query"
+                        style="width:40rem;">
+                    <button class="btn btn-outline-danger my-4 my-sm-0 mr-2" type="submit" name="search_type"
+                        value="search">Search</button>
+                </form>
+            </div>
+            <h3> Search Results({{videos.count}}) </h3>
+
+            {% if videos.count < 1 %} <h5> No search results </h5>
+                <p> Your search - <b>{{query}}</b> - did not match any videos.</p>
+                Suggestions:
+                <ul>
+                    <li> Make sure that all words are spelled correctly.</li>
+                    <li>Try different keywords.</li>
+                    <li>Try more general keywords.</li>
+                    <li>Try fewer keywords.</li>
+                </ul>
+                {% else %}
+                <p> Showing results for query - <b>{{query}}</b> </p>
+                {% endif %}
+
+                {% for video in videos %}
+                <div class="row mb-2">
+                    <div class="col">
+                        <div class="card flex-md-row mb-4 shadow-sm h-md-250" href="#" id="linkcard">
+                            <img src={{video.thumbnail_url}}
+                                class="bd-placeholder-img card-img-left flex-auto d-none d-lg-block" width="320"
+                                height="240" style="object-fit: cover; object-position: center;"
+                                aria-label="Placeholder: Thumbnail" />
+                            <div class="card-body d-flex flex-column align-items-start">
+                                <h3 class="mb-0">
+                                    <a class="text-dark stretched-link" href="{{video.video_url}}" id="linktitle"> 
+                                        {{video.title|safe}} </a>
+                                </h3>
+                                <div class="mb-1 text-muted">
+                                    {{ video.publish_time|date:"M d, Y"}}
+                                </div>
+                                <p><span class="text-muted"> by </span> <b>{{video.channel_name}} </b></p>
+                                <p class="card-text mb-auto"> {{ video.description|safe}} </p>
+                                <a href="{{video.video_url}}" style="color:red;"> Watch now </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+        </div>
+        <style>
+            #linktitle:hover {
+                color: red !important;
+                text-decoration: None;
+            }
+        </style>
+        {% endblock body %}
