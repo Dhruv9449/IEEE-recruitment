@@ -46,11 +46,9 @@ Getting results similar to search if exact match is not found.
 
 ## Requirements
 - [Python version 3+](https://www.python.org/downloads/)
-- [PostgreSQL](https://www.postgresql.org/download/)
+- [PostgreSQL version 14](https://www.postgresql.org/download/)
 
 > NOTE: If you do not wish to use PostgreSQL you can use [`version 1.0`](https://github.com/Dhruv9449/IEEE-recruitment/releases/tag/1.0v) without the **fuzzy search** functionality.  
-   
-> NOTE: If you wish to run an online free instace of postgreSQL you can use [ElephantSQL](https://www.elephantsql.com/).
 
 
 ## Setting up and Installation
