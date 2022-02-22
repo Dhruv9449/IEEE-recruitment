@@ -2,6 +2,8 @@
 ## Problem Statement
 Use the Youtube search API to get all the videos with query "Apple" and store it in a database. Make an endpoint to query the DB based on the video name. [Bonus: Implement fuzzy search]
 
+
+
 ## Table of contents
 - [Preview](#preview)
     - [Search](#search)
@@ -15,6 +17,9 @@ Use the Youtube search API to get all the videos with query "Apple" and store it
     - [Running the server](#run-the-server)
 - [License](#license)
 
+
+
+
 ## Preview
 ### Search
 Lists all the results where the keyword enter matches
@@ -26,12 +31,18 @@ Redirects to the first search result
 
 ![YoutubeAPI-im_feeling_lucky](assets/im_feeling_lucky.gif)
 
+
+
+
 ## Setting up and Installation
+
 ### Cloning Repositary 
 Clone this repositary by running in your terminal-
 ```
 git clone "https://www.github.com/Dhruv9449/IEEE-recruitment"
 ```
+
+
 
 ### Virtual environment
 After cloning the repositary install `virtualenv` set up a virtual environment using the following commands -  
@@ -52,11 +63,14 @@ Refer to the [official virtualenv documentation](https://virtualenv.pypa.io/en/l
 
 > NOTE: Make sure you are in the `IEEE-recruitment/` folder while running this command
 
+
+
 ### Installing dependancies
 To install all the dependancies for this project run the following command in your terminal - 
 ```sh
 pip install -r requirements.txt
 ```
+
 
 
 ### Environment Variables 
@@ -70,6 +84,8 @@ SECRET_KEY=<Your Django key>
 YOUTUBE_API_KEY=<Your youtube API key>
 ```
 
+
+
 ### Migrate Changes in database
 Before you can get the server up and running you will have to migrate the changes made in the database. Run the following command -   
 Windows
@@ -81,6 +97,8 @@ Linux
 user@hostname:~$ python3 manage.py migrate
 ```
 > NOTE: Make sure you are in the `IEEE-recruitment/` folder while running this command
+
+
 
 ### Run the server!
 We're all set the run the server now! Type the following command in your terminal -  
@@ -100,6 +118,8 @@ And then type `localhost:8000` or `127.0.0.1:8000` in your browser's search bar 
 
 > NOTE: Make sure you are in the `IEEE-recruitment/` folder while running this command
 
+
+
 ## License 
 Copyright © 2022 Dhruv9449  
 [MIT License](LICENSE)
@@ -108,4 +128,5 @@ Copyright © 2022 Dhruv9449
 <br>
 <p align="center">
 Developed by <a href="https://github.com/Dhruv9449" target=_blank>Dhruv Shah</a>
+</p>
 </p>
